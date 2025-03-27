@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeBronify 🏀🎵</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'lebron-gold': '#FFD700',
+                        'lebron-red': '#C41E3A',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FFD700, #C41E3A, #FFD700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 8s linear infinite;
+        }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="glass-effect p-4 fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl animate-bounce">🏀</span>
+                        <h1 class="text-2xl font-bold gradient-text">LeBronify</h1>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#songs" class="nav-link text-gray-300 hover:text-lebron-gold transition-colors duration-300 flex items-center space-x-2">
+                            <span>🎵</span>
+                            <span>Songs</span>
+                        </a>
+                        <a href="#legacy" class="nav-link text-gray-300 hover:text-lebron-gold transition-colors duration-300 flex items-center space-x-2">
+                            <span>👑</span>
+                            <span>Legacy</span>
+                        </a>
+                        <a href="#stats" class="nav-link text-gray-300 hover:text-lebron-gold transition-colors duration-300 flex items-center space-x-2">
+                            <span>📊</span>
+                            <span>Stats</span>
+                        </a>
+                        <a href="#special" class="nav-link text-gray-300 hover:text-lebron-gold transition-colors duration-300 flex items-center space-x-2">
+                            <span>🎥</span>
+                            <span>Special Segment</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-lebron-gold text-gray-900 px-6 py-2 rounded-full hover:bg-opacity-90 transition-all duration-300 hover:scale-105 flex items-center space-x-2">
+                        <span>🎵</span>
+                        <span>Play Now</span>
+                    </button>
+                    <button class="md:hidden text-gray-300 hover:text-lebron-gold transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#songs" class="text-2xl text-gray-300 hover:text-lebron-gold transition-colors duration-300">Songs</a>
+            <a href="#legacy" class="text-2xl text-gray-300 hover:text-lebron-gold transition-colors duration-300">Legacy</a>
+            <a href="#stats" class="text-2xl text-gray-300 hover:text-lebron-gold transition-colors duration-300">Stats</a>
+            <a href="#special" class="text-2xl text-gray-300 hover:text-lebron-gold transition-colors duration-300">Special Segment</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 px-4 animate-on-scroll">
+        <div class="container mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-4 gradient-text">Your LeBron James Music Hub</h2>
+            <p class="text-xl text-gray-400 mb-8">Discover and stream songs that celebrate the King 👑</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <input type="search" 
+                           placeholder="Search for LeBron songs..." 
+                           class="w-full px-6 py-4 rounded-full bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-lebron-gold transition-all duration-300">
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-lebron-gold text-gray-900 px-6 py-2 rounded-full hover:bg-opacity-90 transition hover-scale">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Songs -->
+    <section class="py-12 px-4 animate-on-scroll">
+        <div class="container mx-auto">
+            <h3 class="text-3xl font-bold mb-8 gradient-text">Featured Songs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Song Card 1 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="1">
+                    <div class="relative group">
+                        <img src="aadit.jpg" alt="Bron - ilyaugustthats" class="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">That's Bron</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">ilyaugust</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Card 2 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="2">
+                    <div class="relative group">
+                        <img src="pannu.png" alt="Lebron Hour - ilyaugust" class="w-full h-48 object-cover object-top transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">Lebron Hour</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">ilyaugust</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Card 3 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="3">
+                    <div class="relative group">
+                        <img src="panaov.png" alt="LeRansom - fnb.gang8" class="w-full h-48 object-cover object-center transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">LeRansom</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">fnb.gang8</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Card 4 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="4">
+                    <div class="relative group">
+                        <img src="soham.png" alt="thinking 'bout lebron - ilyaugust" class="w-full h-48 object-cover object-center transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">thinking 'bout lebron</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">ilyaugust</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Card 5 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="5">
+                    <div class="relative group">
+                        <img src="pinnu.png" alt="The Lebron I Used to Know - ilyaugust" class="w-full h-48 object-cover object-center transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">The Lebron I Used to Know</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">ilyaugust</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:25</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Song Card 6 -->
+                <div class="song-card bg-gray-800 rounded-lg overflow-hidden hover-scale transition-all duration-300" data-song-id="6">
+                    <div class="relative group">
+                        <img src="aishu.jpg" alt="Toward the Bron - ilyaugust" class="w-full h-48 object-cover object-center transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button class="play-button absolute bottom-4 right-4 bg-lebron-gold text-gray-900 p-3 rounded-full opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-2 hover:bg-opacity-90">
+                            ▶️
+                        </button>
+                    </div>
+                    <div class="p-4 bg-gray-800/50 backdrop-blur-sm">
+                        <h4 class="font-bold text-lg group-hover:text-lebron-gold transition-colors duration-300">Toward the Bron</h4>
+                        <p class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">ilyaugust</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">3:30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="py-20 px-4 bg-gray-900 animate-on-scroll">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold mb-12 gradient-text text-center">LeBron's Legacy</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cavaliers Era -->
+                <div class="relative group overflow-hidden rounded-xl bg-gray-800 hover-scale transition-all duration-500">
+                    <img src="cavs.jpeg" alt="Cavaliers Era" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <h4 class="text-2xl font-bold text-white mb-2">Cavaliers Era</h4>
+                        <p class="text-gray-300">2003-2010, 2014-2018</p>
+                        <p class="text-gray-400 mt-2">First overall pick, Rookie of the Year, and brought Cleveland its first championship</p>
+                    </div>
+                </div>
+
+                <!-- Heat Era -->
+                <div class="relative group overflow-hidden rounded-xl bg-gray-800 hover-scale transition-all duration-500">
+                    <img src="heat.jpeg" alt="Heat Era" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <h4 class="text-2xl font-bold text-white mb-2">Heat Era</h4>
+                        <p class="text-gray-300">2010-2014</p>
+                        <p class="text-gray-400 mt-2">Back-to-back championships and four straight NBA Finals appearances</p>
+                    </div>
+                </div>
+
+                <!-- Lakers Era -->
+                <div class="relative group overflow-hidden rounded-xl bg-gray-800 hover-scale transition-all duration-500">
+                    <img src="lakers.avif" alt="Lakers Era" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <h4 class="text-2xl font-bold text-white mb-2">Lakers Era</h4>
+                        <p class="text-gray-300">2018-Present</p>
+                        <p class="text-gray-400 mt-2">Championship in the bubble, becoming the first player to win Finals MVP with three different teams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 px-4 bg-gray-800 animate-on-scroll">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold mb-12 gradient-text text-center">Career Statistics</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Points -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover-scale transition-all duration-300">
+                    <div class="text-4xl font-bold text-lebron-gold mb-2">38,388</div>
+                    <div class="text-gray-400">Career Points</div>
+                    <div class="text-sm text-gray-500 mt-2">NBA's All-Time Leading Scorer</div>
+                </div>
+
+                <!-- Championships -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover-scale transition-all duration-300">
+                    <div class="text-4xl font-bold text-lebron-gold mb-2">4</div>
+                    <div class="text-gray-400">NBA Championships</div>
+                    <div class="text-sm text-gray-500 mt-2">With 3 Different Teams</div>
+                </div>
+
+                <!-- MVPs -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover-scale transition-all duration-300">
+                    <div class="text-4xl font-bold text-lebron-gold mb-2">4</div>
+                    <div class="text-gray-400">Regular Season MVPs</div>
+                    <div class="text-sm text-gray-500 mt-2">2009, 2010, 2012, 2013</div>
+                </div>
+
+                <!-- All-Star -->
+                <div class="bg-gray-900 rounded-xl p-6 text-center hover-scale transition-all duration-300">
+                    <div class="text-4xl font-bold text-lebron-gold mb-2">19</div>
+                    <div class="text-gray-400">All-Star Selections</div>
+                    <div class="text-sm text-gray-500 mt-2">Most in NBA History</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Segment Section -->
+    <section id="special" class="py-20 px-4 bg-gray-900 animate-on-scroll">
+        <div class="container mx-auto">
+            <h3 class="text-4xl font-bold mb-12 gradient-text text-center">Special Segment</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-6 hover-scale transition-all duration-300">
+                    <div class="aspect-video w-full">
+                        <iframe 
+                            style="border-radius:12px" 
+                            src="https://open.spotify.com/embed/episode/7BOcXr9KFHJTTFW58qKghf/video?utm_source=generator&theme=0" 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h4 class="text-xl font-bold text-white mb-2">LeBron James Special</h4>
+                        <p class="text-gray-400">Listen to this special episode about LeBron's journey and impact on the game</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Player -->
+    <div class="fixed bottom-0 left-0 right-0 glass-effect p-4 animate-on-scroll">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="https://i.scdn.co/image/ab67616d0000b273c5716278a6f2d1d0c877c52" alt="Current Song" class="w-12 h-12 rounded">
+                    <div>
+                        <h4 class="font-bold">No song playing</h4>
+                        <p class="text-gray-400 text-sm">Select a song to play</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-400 hover:text-white transition">
+                        ⏮️
+                    </button>
+                    <button class="bg-lebron-gold text-gray-900 p-3 rounded-full hover:bg-opacity-90 transition">
+                        ▶️
+                    </button>
+                    <button class="text-gray-400 hover:text-white transition">
+                        ⏭️
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="range" class="w-32 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+                    <span class="text-gray-400">0:00 / 0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 px-4 animate-on-scroll">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">Created by: Bronny James</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
