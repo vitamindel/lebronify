@@ -50,19 +50,43 @@ const songs = [
     },
     {
         id: 7,
-        title: "King James",
-        artist: "Lil Wayne",
+        title: "Le-Upside Down",
+        artist: "atp200520",
         duration: "3:45",
-        cover: "https://i.scdn.co/image/ab67616d0000b273c5716278a6f2d1d0c877c52",
-        audio: "https://example.com/audio1.mp3"
+        cover: "pinnu.png",
+        audio: "leupsidedown.mp3"
     },
     {
         id: 8,
-        title: "The GOAT",
-        artist: "Polo G",
-        duration: "4:20",
-        cover: "https://i.scdn.co/image/ab67616d0000b273c5716278a6f2d1d0c877c52",
-        audio: "https://example.com/audio2.mp3"
+        title: "No Bron",
+        artist: "ilyaugust",
+        duration: "0:31",
+        cover: "pinnu.png",
+        audio: "nobron.mp3"
+    },
+    {
+        id: 9,
+        title: "Lebron in 5",
+        artist: "ramon angelo",
+        duration: "1:03",
+        cover: "pinnu.png",
+        audio: "lebronin5.mp3"
+    },
+    {
+        id: 10,
+        title: "Brontastic",
+        artist: "ilyaugust",
+        duration: "0:45",
+        cover: "pinnu.png",
+        audio: "brontastic.mp4"
+    },
+    {
+        id: 11,
+        title: "I'd Catch a LeNade for You",
+        artist: "ilyaugust",
+        duration: "1:00",
+        cover: "pinnu.png",
+        audio: "lenade.mp3"
     },
     // Add more songs as needed
 ];
