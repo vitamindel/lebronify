@@ -70,7 +70,7 @@ const songs = [
         artist: "ramon angelo",
         duration: "1:03",
         cover: "pinnu.png",
-        audio: "lebronin5.mp3"
+        audio: "lakersin5.mp3"
     },
     {
         id: 10,
